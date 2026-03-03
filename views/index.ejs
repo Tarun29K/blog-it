@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>BlogIt</title>
 </head>
 <body>
-    <h1>Welcome to Blog-It !!</h1>
+    <h1>Welcome to Blog-It!</h1>
+    
+    <a href="/create">Create New Post</a>
+
+    <% if(locals.posts.length === 0) { %>
+        <p>No posts available.</p>
+    <% } %>
+
+    <% locals.posts.forEach(post => { %>
+        <div>
+            <h3><%= post.title %> </h3>
+            <p> <%= post.content %> </p>
+        </div>
+        <hr>
+    <% }) %>
+
 </body>
 </html>

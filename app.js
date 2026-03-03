@@ -15,8 +15,29 @@ app.use((req, res, next) => {
     next();
 })
 
+let posts = [];
+let currentID = 1;
+
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {posts });
+})
+
+app.get("/create", (req, res) => {
+    res.render("create");
+})
+
+app.post("/posts", (req, res) => {
+    const post = {
+        id: currentID++,
+        title: req.body.title,
+        content: req.body.content,
+        timestamp: new Date()
+    };
+
+    posts.push(post);
+    console.log(posts);
+    res.redirect("/");
+    
 })
 
 app.listen(port, () => {
