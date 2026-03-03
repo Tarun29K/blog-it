@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
     res.render("index", {posts });
 })
 
+//create
 app.get("/create", (req, res) => {
     res.render("create");
 })
@@ -40,6 +41,25 @@ app.post("/posts", (req, res) => {
     
 })
 
+//edit
+app.get("/edit/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const post = posts.find(post => post.id === id);
+
+    res.render("edit", {post});
+})
+
+app.post("/edit/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const post = posts.find(post => post.id === id);
+
+    post.title = req.body.title;
+    post.content = req.body.content;
+
+    res.redirect("/");
+})
+
+//delete
 app.post("/delete/:id", (req, res) => {
     const id = Number(req.params.id);
     posts = posts.filter(post => post.id !== id);
