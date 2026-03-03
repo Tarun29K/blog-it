@@ -19,6 +19,10 @@
         <div>
             <h3><%= post.title %> </h3>
             <p> <%= post.content %> </p>
+
+            <form action="/delete/<%= post.id %>" method = "POST">
+                <button type = "submit">Delete Post</button>
+            </form>
         </div>
         <hr>
     <% }) %>

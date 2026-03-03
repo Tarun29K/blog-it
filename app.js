@@ -40,6 +40,12 @@ app.post("/posts", (req, res) => {
     
 })
 
+app.post("/delete/:id", (req, res) => {
+    const id = Number(req.params.id);
+    posts = posts.filter(post => post.id !== id);
+    res.redirect("/");
+})
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
 })
