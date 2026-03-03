@@ -1,25 +1,20 @@
-# Blog-It 📝
+# Blog-It
 
 A dynamic blogging web application built using Node.js, Express.js, and EJS.
 
 ---
 
-## 🚀 Project Status
-Currently in Phase 2 – Server Setup & Basic Configuration
-
----
-
-## 🛠 Tech Stack
+## Tech-Stack
 - Node.js
 - Express.js
 - EJS
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript ES6+
 
 ---
 
-## 📌 Planned Features
+## Features
 - Create blog posts
 - Edit blog posts
 - Delete blog posts
@@ -27,8 +22,5 @@ Currently in Phase 2 – Server Setup & Basic Configuration
 - Express route handling
 - Middleware usage
 - Responsive design
-- In-memory data storage (No database for now)
+- In-memory data storage
 
----
-
-## 📂 Project Structure
