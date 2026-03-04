@@ -1,6 +1,126 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.post-create {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.create-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.post-create {
     text-align: center;
-    padding: 50px;
-    background-color: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* post-divs */
+.post-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card h2 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.post-card p {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* buttons */
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+}
+
+.delete-btn {
+  background-color: #f44336;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+
+/* responsiveness */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .post-card {
+    padding: 15px;
+  }
 }

@@ -7,27 +7,35 @@
     <title>BlogIt</title>
 </head>
 <body>
-    <h1>Welcome to Blog-It!</h1>
+    <div class = "container">
+        <h1 class = "heading">Welcome to Blog-It!</h1>
+        <div class = "post-create">
+            <a href="/create" class = "create-btn">Create New Post</a>
+        </div>
     
-    <a href="/create">Create New Post</a>
+        <% if(locals.posts.length === 0) { %>
+            <p>No posts available.</p>
+        <% } %>
 
-    <% if(locals.posts.length === 0) { %>
-        <p>No posts available.</p>
-    <% } %>
-
-    <% locals.posts.forEach(post => { %>
-        <div>
-            <h3><%= post.title %> </h3>
-            <p> <%= post.content %> </p>
-
-            <a href="/edit/<%= post.id %>">Edit</a>
-            <br><br>
-            <form action="/delete/<%= post.id %>" method = "POST">
-                <button type = "submit">Delete Post</button>
-            </form>
+        <% locals.posts.forEach(post => { %>
+        <div class = "post-card">
+            <div>
+                <h3><%= post.title %> </h3>
+                <p> <%= post.content %> </p>
+            </div>
+            <div class = "card-buttons">
+                <a href="/edit/<%= post.id %>" class = "btn edit-btn">Edit</a>
+                <br><br>
+                <form action="/delete/<%= post.id %>" method = "POST">
+                <button type = "submit" class = "btn delete-btn">Delete Post</button>
+                </form>
+            </div>    
         </div>
         <hr>
-    <% }) %>
+        <% }) %>
+        
+    </div>
+    
 
 </body>
 </html>
